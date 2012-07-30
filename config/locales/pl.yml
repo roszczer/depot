@@ -1,0 +1,90 @@
+#START:layout
+#START:main
+#START:cart
+#START:currency
+#START:checkout
+#START:flash
+pl:
+
+#END:cart
+#END:checkout
+#END:flash
+#END:main
+#END:layout
+  number:
+    currency:
+      format:
+        unit:      "USD"
+        precision: 2
+        separator: ","
+        delimiter: " "
+        format:    "%n %u"
+#END:currency
+
+#START:model
+#START:errors
+  activerecord:
+#END:errors
+    models:
+      order:        "Zamówienie"
+    attributes:
+      order:
+        address:    "Adres"
+        name:       "Nazwa"
+        email:      "email"
+        pay_type:   "Forma płatności"
+#END:model
+#START:errors
+    errors:
+      messages:
+        inclusion:  "nie znaleziono w liście"
+        blank:      "nie może być puste"
+  errors:
+    template:
+      body:        "Wystąpiły problemy w następujących polach:"
+      header:       
+        one:       "%{model} nie może być zapisane z powodu 1 błędu"
+        other:     "%{model} nie może być zapisane z powodu %{count} błędów"
+#END:errors
+
+#START:layout
+  layouts:
+    application:
+      title:       "Pragmatyczne Publikacje"
+      home:        "Strona Domowa"
+      questions:   "Pytania"
+      news:        "Nowości"
+      contact:     "Kontact"
+#END:layout
+
+#START:cart
+  carts:
+    cart:
+      title:       "Twój Koszyk"
+      empty:       "Opróżnij Koszyk"
+      checkout:    "Sprawdź"
+#END:cart
+
+#START:main
+  store:
+    index:
+      title_html:  "Twój Pragmatyczny Katalog"
+      add_html:    "Dodaj do Koszyka"
+#END:main
+
+#START:checkout
+  orders:
+    new:
+      legend:       "Proszę Wpisać Swoje Dane"
+    form:
+      name:         "Nazwa"
+      address_html: "Adres"
+      email:        "E-mail"
+      pay_type:     "Forma płatności"
+      pay_prompt_html: "Wybierz formę płatności"
+      submit:       "Złóż zamówienie"
+#END:checkout
+
+#START:flash
+  thanks:          "Dziękujemy za złożenie zamówienia"
+#END:flash

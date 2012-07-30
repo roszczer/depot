@@ -9,7 +9,7 @@
 require 'test_helper'
 
 class ProductTest < ActiveSupport::TestCase
- # fixtures :products
+  fixtures :products
   test "product attributes must not be empty" do
     product = Product.new
     assert product.invalid?
@@ -18,7 +18,7 @@ class ProductTest < ActiveSupport::TestCase
     assert product.errors[:price].any?
     assert product.errors[:image_url].any?
   end
-=begin
+
   test "product price must be positive" do
     product = Product.new(title:       "My Book Title",
                           description: "yyy",
@@ -78,5 +78,5 @@ class ProductTest < ActiveSupport::TestCase
     assert_equal I18n.translate('activerecord.errors.messages.taken'),
                  product.errors[:title].join('; ')
   end
-=end  
+  
 end
